@@ -1,6 +1,8 @@
 # stackoverflow
 learning
 
+[我们的网址](http://my-bucket-1259475154.cos-website.ap-guangzhou.myqcloud.com)
+
 ## 关于前端学习的一些总结
 
 ### 关注点
@@ -33,7 +35,6 @@ stackoverflow 主要关注一些实际操作，目前计划先提供大框架的
 
 10.ts
 
-tips:可以添加视频，内容成型到一定阶段，可以建立一个单独的文档网站
 
 
 
