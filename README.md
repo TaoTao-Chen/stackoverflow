@@ -29,5 +29,39 @@ Koa可以通过生成器摆脱回调，极大地改进错误处理。Koa核心�
 在浏览器中输入http://localhost:3000,网页上输出 hello koa!
 
 2. koa路由中间件 koa-router
-koa-router
-iiiiiiiiii
+对于一个后台服务器来说，不同的url请求应该需要不同的代码逻辑来进行处理。这里我们引入koa-router中间件来处理。
+
+```
+    yarn add koa-router
+```
+```
+const Koa = require('koa');
+const Router = require('koa-router');
+
+const App = new Koa();
+const router = new Router();
+
+//定义不同的请求
+router.get("/home", async (ctx, next) => {
+    ctx.response.status = 200;
+    ctx.body = 'home'
+})
+
+router.post("/form", async (ctx, next) => {
+    ctx.response.status = 200;
+    ctx.body = 'form'
+})
+
+App.use(router.routes()).use(router.allowedMethods);
+
+App.use(async (ctx, next) => {
+    ctx.body = "hello kao!!"
+})
+
+App.listen(3000, () => {
+    console.log("App started on port: 3000")
+})
+```
+
+3. koa连接mongodb   
+// contos安装mongodb
